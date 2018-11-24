@@ -1,2 +1,2 @@
-# shortie
+# shorty
 Simple Url Shortener
