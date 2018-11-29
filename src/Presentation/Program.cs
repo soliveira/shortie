@@ -31,6 +31,7 @@ namespace Soliveira.Shorty.Presentation
 
             return WebHost.CreateDefaultBuilder(args)
                           .ConfigureMetrics(Metrics)
+                          .UseMetricsWebTracking()
                             .UseMetrics(
                             options =>
                             {
