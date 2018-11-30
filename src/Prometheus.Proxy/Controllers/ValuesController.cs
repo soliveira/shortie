@@ -13,7 +13,12 @@ namespace Prometheus.Proxy.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private static HttpClient httpClient = new HttpClient();
+        private static HttpClientHandler httpClientHandler = new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; }
+        };
+
+        private static HttpClient httpClient = new HttpClient(httpClientHandler);
         private readonly string proxyTarget;
 
         public ValuesController(IOptions<ProxyConfiguration> target)

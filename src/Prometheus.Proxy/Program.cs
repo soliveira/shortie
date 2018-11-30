@@ -19,6 +19,7 @@ namespace Prometheus.Proxy
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("https://localhost:5003")
                 .UseStartup<Startup>();
     }
 }
